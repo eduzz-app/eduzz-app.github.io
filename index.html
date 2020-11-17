@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://eduzz-mobile.s3.amazonaws.com/site/favicon.png" rel="shortcut icon" type="image/x-icon" />
+	<title>Eduzz App</title>
+
+	<style>
+		html,
+		body,
+		div,
+		span,
+		applet,
+		object,
+		iframe,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		blockquote,
+		pre,
+		a,
+		abbr,
+		acronym,
+		address,
+		big,
+		cite,
+		code,
+		del,
+		dfn,
+		em,
+		img,
+		ins,
+		kbd,
+		q,
+		s,
+		samp,
+		small,
+		strike,
+		strong,
+		sub,
+		sup,
+		tt,
+		var,
+		b,
+		u,
+		i,
+		center,
+		dl,
+		dt,
+		dd,
+		ol,
+		ul,
+		li,
+		fieldset,
+		form,
+		label,
+		legend,
+		table,
+		caption,
+		tbody,
+		tfoot,
+		thead,
+		tr,
+		th,
+		td,
+		article,
+		aside,
+		canvas,
+		details,
+		embed,
+		figure,
+		figcaption,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		output,
+		ruby,
+		section,
+		summary,
+		time,
+		mark,
+		audio,
+		video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+
+		article,
+		aside,
+		details,
+		figcaption,
+		figure,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		section {
+			display: block;
+		}
+
+		body {
+			line-height: 1;
+		}
+
+		ol,
+		ul {
+			list-style: none;
+		}
+
+		blockquote,
+		q {
+			quotes: none;
+		}
+
+		blockquote:before,
+		blockquote:after,
+		q:before,
+		q:after {
+			content: '';
+			content: none;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+	</style>
+
+	<style>
+		body {
+			text-align: center;
+			font-family: sans-serif;
+			padding: 24px;
+			background: #fafafa;
+		}
+
+		.logo {
+			border-radius: 22%;
+			max-width: 100%;
+			margin-bottom: 50px;
+			box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.55);
+			max-height: 20vh;
+		}
+
+		p {
+			font-size: 20px;
+			color: #333;
+			line-height: 30px;
+			margin-bottom: 20px;
+		}
+
+		hr {
+			border-width: 0;
+			border-bottom-width: 1.5px;
+			border-bottom-color: rgb(204, 204, 204);
+			margin: 24px 0;
+		}
+
+		.text {
+			margin-bottom: 20px;
+			font-size: 24px;
+		}
+
+		.play-link,
+		.apple-link {
+			width: 100%;
+			text-decoration: none;
+			display: inline-block;
+			margin-bottom: 8px;
+			max-width: 200px;
+		}
+
+		.play-link img,
+		.apple-link img {
+			max-width: 200px;
+			width: 100%;
+		}
+
+		.play-link img {
+			min-height: 80px;
+			margin-bottom: -12px;
+		}
+
+		.apple-link img {
+			width: calc(100% - 30px);
+			max-width: 175px;
+			min-height: 55px;
+		}
+
+		.button {
+			padding: 16px 24px;
+			text-decoration: none;
+			color: white;
+			background: #000C34;
+			border-radius: 8px;
+			display: inline-block;
+			box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.55);
+			text-transform: uppercase;
+			font-size: 14px;
+			letter-spacing: 1px;
+			line-height: 22px;
+		}
+	</style>
+</head>
+
+<body>
+	<img class="logo" src='https://eduzz-mobile.s3.amazonaws.com/site/logo.png' />
+
+	<p>
+		Para abrir esse link é necessário instalar o app da Eduzz e entrar com a sua conta, baixa lá é rápidinho 😉
+	</p>
+
+	<div>
+		<a class='play-link' href='https://play.google.com/store/apps/details?id=com.eduzzmobile.mobile&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' rel='noreferrer noopener' target='_blank'>
+			<img src='https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png' />
+		</a>
+
+		<a class='apple-link' href="https://apps.apple.com/us/app/eduzz-neg%C3%B3cios-digitais/id1079845439?itsct=apps_box&amp;itscg=30200" rel='noreferrer noopener' target='_blank'>
+			<img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-BR?size=250x83&amp;releaseDate=1454716800&h=353f092afe747d0fd3a68a7ecf64871c" />
+		</a>
+	</div>
+
+	<hr />
+
+	<p>
+		Já possui o app instalado?
+	</p>
+
+	<a class="button" href="#" id='button'>
+		Clique aqui para abrir 📲
+	</a>
+
+
+	<script>
+		const query = document.location.search;
+		document.getElementById('button').href = 'eduzz://app' + query;
+	</script>
+</body>
+
+</html>
