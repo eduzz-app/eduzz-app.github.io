@@ -1,0 +1,15 @@
+{
+  "name": "eduzz-app.github.io",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:eduzz-app/eduzz-app.github.io.git",
+  "author": "Daniel Prado <danielprado.ad@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "live-server"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

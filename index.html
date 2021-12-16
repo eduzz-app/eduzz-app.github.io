@@ -11,6 +11,7 @@
 	<meta property="og:description" content="Conheça o app da Eduzz">
 	<meta property="og:image" content="/logo.png">
 
+
 	<title>Eduzz App</title>
 
 	<style>
@@ -171,7 +172,7 @@
 		hr {
 			border-width: 0;
 			border-bottom-width: 1.5px;
-			border-bottom-color: rgb(204, 204, 204);
+			border-bottom-color: rgb(124, 124, 124);
 			margin: 24px 0;
 		}
 
@@ -219,14 +220,23 @@
 			letter-spacing: 1px;
 			line-height: 22px;
 		}
+
+		#open-link,
+		#download {
+			display: none;
+		}
 	</style>
 </head>
 
 <body>
 	<img class="logo" src='/logo.png' />
 
-	<p>
+	<p id='open-link'>
 		Para abrir esse link é necessário instalar o app da Eduzz e entrar com a sua conta, baixa lá é rápidinho 😉
+	</p>
+
+	<p id='download'>
+		No app Eduzz fica muito mais fácil de acompanhar seu negócio, baixa lá é rápidinho 😉
 	</p>
 
 	<div>
@@ -251,8 +261,25 @@
 
 
 	<script>
-		const query = document.location.search;
+		var query = document.location.search;
 		document.getElementById('button').href = 'eduzz://app' + query;
+		document.getElementById(query ? 'open-link' : 'download').style.display = 'block';
+
+		var script = document.createElement('script');
+		script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js'
+		script.async = true;
+		script.onload = () => {
+			setTimeout(() => {
+				var md = new MobileDetect(window.navigator.userAgent);
+				if (!md.mobile()) return;
+
+				var isIPhone = md.is('iPhone');
+				var url = document.querySelector(isIPhone ? '.apple-link' : '.play-link').href;
+				window.location.href = url;
+			}, 1000);
+		}
+
+		document.body.appendChild(script);
 	</script>
 </body>
 
