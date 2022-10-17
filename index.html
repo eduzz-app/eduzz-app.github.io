@@ -264,22 +264,6 @@
 		var query = document.location.search;
 		document.getElementById('button').href = 'eduzz://app' + query;
 		document.getElementById(query ? 'open-link' : 'download').style.display = 'block';
-
-		var script = document.createElement('script');
-		script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js'
-		script.async = true;
-		script.onload = () => {
-			setTimeout(() => {
-				var md = new MobileDetect(window.navigator.userAgent);
-				if (!md.mobile()) return;
-
-				var isIPhone = md.is('iPhone');
-				var url = document.querySelector(isIPhone ? '.apple-link' : '.play-link').href;
-				window.location.href = url;
-			}, 1000);
-		}
-
-		document.body.appendChild(script);
 	</script>
 </body>
 
