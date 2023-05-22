@@ -240,11 +240,11 @@
 	</p>
 
 	<div>
-		<a class='play-link' href='https://play.google.com/store/apps/details?id=com.eduzzmobile.mobile&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' rel='noreferrer noopener' target='_blank'>
+		<a id='play-link' class='play-link' href='#' rel='noreferrer noopener' target='_blank'>
 			<img src='https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png' />
 		</a>
 
-		<a class='apple-link' href="https://apps.apple.com/us/app/eduzz-neg%C3%B3cios-digitais/id1079845439?itsct=apps_box&amp;itscg=30200" rel='noreferrer noopener' target='_blank'>
+		<a id='apple-link' class='apple-link' href="https://apps.apple.com/us/app/eduzz-neg%C3%B3cios-digitais/id1079845439?itsct=apps_box&amp;itscg=30200" rel='noreferrer noopener' target='_blank'>
 			<img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-BR?size=250x83&amp;releaseDate=1454716800&h=353f092afe747d0fd3a68a7ecf64871c" />
 		</a>
 	</div>
@@ -262,8 +262,24 @@
 
 	<script>
 		var query = document.location.search;
-		document.getElementById('button').href = 'eduzz://app' + query;
+		document.getElementById('button').href = 'eduzz://app?' + prepareUtmParams(query);
+		document.getElementById('play-link').href = 'https://play.google.com/store/apps/details?id=com.eduzzmobile.mobile&url=eduzz://app?' + prepareUtmParams(query);
 		document.getElementById(query ? 'open-link' : 'download').style.display = 'block';
+
+
+		function prepareUtmParams (querySearch) {
+			querySearch = defaultQueryParams(querySearch);
+
+			return encodeURIComponent(querySearch);
+		}
+
+		function defaultQueryParams(querySearch) {
+			querySearch = querySearch.replace('?', '');
+
+			if(!!querySearch) return querySearch;
+			
+			return 'utm_source=app-eduzz-website&utm_medium=website&utm_campaign=app-default';
+		}
 	</script>
 </body>
 
