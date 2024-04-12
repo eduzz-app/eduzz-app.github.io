@@ -1,0 +1,11 @@
+{
+  "applinks": {
+      "apps": [],
+      "details": [
+           {
+             "appID": "HTG68XLT44.Eduzz.MBP",
+             "paths": ["*"]
+           }
+       ]
+   }
+}
