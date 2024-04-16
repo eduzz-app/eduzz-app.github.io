@@ -260,9 +260,13 @@
 	</a>
 
 	<script>
-		var query = document.location.search;
-		document.getElementById('button').href = 'eduzz://?' + defaultQueryParams(query);
-		document.getElementById('play-link').href = 'https://play.google.com/store/apps/details?id=com.eduzzmobile.mobile&url=eduzz://?' + defaultQueryParams(query);
+		const query = document.location.search;
+		const path = document.location.pathname ?? '';
+		const pathName = path?.replace('index.html', '')?.substring(1)
+		const deeplinkRedirect = `eduzz://${pathName}?${defaultQueryParams(query)}`;
+
+		document.getElementById('button').href = deeplinkRedirect;
+		document.getElementById('play-link').href = `https://play.google.com/store/apps/details?id=com.eduzzmobile.mobile&url=${deeplinkRedirect}`;
 		document.getElementById(query ? 'open-link' : 'download').style.display = 'block';
 
 		function defaultQueryParams(querySearch) {
