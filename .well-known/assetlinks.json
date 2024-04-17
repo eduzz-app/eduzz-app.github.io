@@ -5,4 +5,12 @@
     "package_name": "com.eduzzmobile.mobile",
     "sha256_cert_fingerprints": ["C3:EA:60:C3:4E:E7:DF:4B:0E:96:BE:DF:F3:12:E4:A2:66:D1:14:E8:D9:FB:8C:BB:DD:CD:01:7A:CB:E6:C9:D9"]
   }
+},
+{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.eduzzmobile.mobile",
+    "sha256_cert_fingerprints": ["2B:20:55:5E:0C:49:9C:F5:D8:B2:78:5C:33:BB:51:34:48:66:36:65:04:D7:34:9C:9E:3D:2A:6E:D2:C2:24:BB"]
+  }
 }]
